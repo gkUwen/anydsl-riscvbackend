@@ -1,0 +1,6 @@
+#!/bin/bash
+FILE={llvm.cpp}
+cd /root/anydsl-riscvbackend/thorin/src/thorin/be/llvm
+cp $FILE　~/anydsl/thorin/src/thorin/be/llvm/
+cd ~/anydsl
+
