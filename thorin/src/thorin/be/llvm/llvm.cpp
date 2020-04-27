@@ -452,7 +452,7 @@ std::unique_ptr<llvm::Module>& CodeGen::emit(int opt, bool debug) {
                         // must be a closure
                         auto closure = lookup(callee);
                         args.push_back(irbuilder_.CreateExtractValue(closure, 1));
-                        if((irbuilder_.CreateExtractValue(closure, 0)==nullptr){
+                        if(irbuilder_.CreateExtractValue(closure, 0)==nullptr){
                             fprintf(stderr,"err\n");
                         }
                         call = irbuilder_.CreateCall(irbuilder_.CreateExtractValue(closure, 0), args);
