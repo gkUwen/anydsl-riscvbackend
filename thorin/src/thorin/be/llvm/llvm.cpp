@@ -427,7 +427,8 @@ std::unique_ptr<llvm::Module>& CodeGen::emit(int opt, bool debug) {
                 // function/closure call
                 if (!terminated) {
                     // put all first-order args into an array
-                    std::vector<llvm::Value*> args;
+                    //std::vector<llvm::Value*> args;
+                    Array<llvm::Value*> args;
                     const Def* ret_arg = nullptr;
                     for (auto arg : continuation->args()) {
                         if (arg->order() == 0) {
