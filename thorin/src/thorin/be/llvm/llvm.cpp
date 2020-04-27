@@ -452,7 +452,9 @@ std::unique_ptr<llvm::Module>& CodeGen::emit(int opt, bool debug) {
                         // must be a closure
                         auto closure = lookup(callee);
                         args.push_back(irbuilder_.CreateExtractValue(closure, 1));
-                        call = irbuilder_.CreateCall(callee, args);//irbuilder_.CreateExtractValue(closure, 0)
+                        //call = irbuilder_.CreateCall(irbuilder_.CreateExtractValue(closure, 0), args);
+                        auto va = irbuilder_.CreateExtractValue(closure, 0);
+                        call = irbuilder_.CreateCall(cast<FunctionType>(Callee->getType()->getPointerElementType()),va,args,"",nullptr);
                     }
 
                     // must be call + continuation --- call + return has been removed by codegen_prepare
