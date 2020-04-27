@@ -1,0 +1,3 @@
+@INCLUDE               = ../layout/doxyfile.skeleton
+
+PROJECT_NAME           = Thorin

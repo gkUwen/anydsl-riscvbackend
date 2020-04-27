@@ -1,0 +1,12 @@
+*.bc
+*.cl
+*.cu
+*.ll
+*.nvvm
+*.amdgpu
+*.s
+*.out
+CMakeCache.txt
+CMakeFiles/
+build*
+test/impala
